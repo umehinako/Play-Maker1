@@ -34,3 +34,4 @@ MonoBehaviour:
   events:
   - addEnemy
   - spawn enemy
+  - subtracetEnemy

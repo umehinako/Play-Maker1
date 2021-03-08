@@ -369,7 +369,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 010101
-        actionIsOpen: 000001
+        actionIsOpen: 010101
         actionStartIndex: 000000000900000010000000
         actionHashCodes: 4e661301fa0e54029c512400
         unityObjectParams: []
@@ -504,9 +504,9 @@ MonoBehaviour:
         fsmQuaternionParams: []
         stringParams:
         - 
-        - 
+        - reachedPlayer
         - die
-        byteData: 00000000
+        byteData: 01000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
@@ -665,7 +665,7 @@ MonoBehaviour:
         - 
         - chasePlayer
         - die
-        byteData: 010000000000
+        byteData: 010101000000
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
@@ -939,7 +939,7 @@ MonoBehaviour:
       isGlobal: 0
     - name: subtracetEnemy
       isSystemEvent: 0
-      isGlobal: 0
+      isGlobal: 1
     - name: destroySelf
       isSystemEvent: 0
       isGlobal: 0
@@ -1153,7 +1153,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 01010101010101
-        actionIsOpen: 00000000000000
+        actionIsOpen: 01010000000000
         actionStartIndex: 00000000030000000a00000012000000180000002200000027000000
         actionHashCodes: 786b39025552ad056ab4490460532301b0327400a0dd8303184b5704
         unityObjectParams: []
@@ -2020,24 +2020,64 @@ MonoBehaviour:
         linkTarget: 0
         colorIndex: 0
       actionData:
-        actionNames: []
-        customNames: []
-        actionEnabled: 
-        actionIsOpen: 
-        actionStartIndex: 
-        actionHashCodes: 
+        actionNames:
+        - HutongGames.PlayMaker.Actions.GetFsmVariable
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 2910c802
         unityObjectParams: []
         fsmGameObjectParams: []
-        fsmOwnerDefaultParams: []
+        fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 938178088}
         animationCurveParams: []
         functionCallParams: []
         fsmTemplateControlParams: []
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 
         fsmObjectParams: []
-        fsmVarParams: []
+        fsmVarParams:
+        - variableName: enemyCount
+          objectType: UnityEngine.Object
+          useVariable: 1
+          type: 1
+          floatValue: 0
+          intValue: 0
+          boolValue: 0
+          stringValue: 
+          vector4Value: {x: 0, y: 0, z: 0, w: 0}
+          objectReference: {fileID: 0}
+          arrayValue:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            type: -1
+            objectTypeName: 
+            floatValues: []
+            intValues: 
+            boolValues: 
+            stringValues: []
+            vector4Values: []
+            objectReferences: []
         fsmArrayParams: []
         fsmEnumParams: []
         fsmFloatParams: []
@@ -2049,15 +2089,19 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams: []
-        byteData: 
+        byteData: 00
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 
-        paramName: []
-        paramDataPos: 
-        paramByteDataSize: 
+        paramDataType: 14000000120000002700000001000000
+        paramName:
+        - gameObject
+        - fsmName
+        - storeValue
+        - everyFrame
+        paramDataPos: 00000000000000000000000000000000
+        paramByteDataSize: 00000000000000000000000001000000
     - name: Character Generation
       description: 
       colorIndex: 0
@@ -2096,7 +2140,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 010101010101
-        actionIsOpen: 000000010000
+        actionIsOpen: 000000010101
         actionStartIndex: 0000000003000000060000000c0000001200000016000000
         actionHashCodes: 2ee017042ee01704dfd72a04605323015e69bb040d5f5c01
         unityObjectParams: []
@@ -2341,7 +2385,7 @@ MonoBehaviour:
         - 
         - 
         actionEnabled: 0101
-        actionIsOpen: 0100
+        actionIsOpen: 0101
         actionStartIndex: 0000000004000000
         actionHashCodes: 2910c80209faa102
         unityObjectParams: []
@@ -2399,17 +2443,17 @@ MonoBehaviour:
         fsmFloatParams: []
         fsmIntParams:
         - useVariable: 1
-          name: maxEnemies
-          tooltip: 
-          showInInspector: 0
-          networkSync: 0
-          value: 20
-        - useVariable: 1
           name: enemyCount
           tooltip: 
           showInInspector: 0
           networkSync: 0
           value: 0
+        - useVariable: 1
+          name: maxEnemies
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 20
         fsmBoolParams: []
         fsmVector2Params: []
         fsmVector3Params: []
@@ -2420,7 +2464,7 @@ MonoBehaviour:
         - 
         - spawn enemy
         - 
-        byteData: 0000
+        byteData: 0001
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
@@ -2791,7 +2835,7 @@ MonoBehaviour:
     events:
     - name: subtracetEnemy
       isSystemEvent: 0
-      isGlobal: 0
+      isGlobal: 1
     - name: addEnemy
       isSystemEvent: 0
       isGlobal: 1
@@ -6228,7 +6272,6 @@ GameObject:
   - component: {fileID: 5560080916046958563}
   - component: {fileID: 5560080916056513202}
   - component: {fileID: 5560080916056513203}
-  - component: {fileID: 5560080916056513868}
   m_Layer: 0
   m_Name: girl
   m_TagString: Untagged
@@ -6900,18 +6943,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5560080916056513868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5560080916056423379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1384774831, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5560080916056605111
 GameObject:
   m_ObjectHideFlags: 0
